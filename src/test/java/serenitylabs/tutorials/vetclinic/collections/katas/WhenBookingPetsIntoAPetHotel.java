@@ -1,9 +1,12 @@
 package serenitylabs.tutorials.vetclinic.collections.katas;
 
+import com.google.common.collect.Ordering;
+import org.assertj.core.data.MapEntry;
 import org.junit.Test;
 import serenitylabs.tutorials.vetclinic.Breed;
 import serenitylabs.tutorials.vetclinic.Pet;
 
+import static com.google.common.collect.Ordering.*;
 import static org.assertj.core.api.Assertions.assertThat;
 
 public class WhenBookingPetsIntoAPetHotel {
@@ -20,7 +23,7 @@ public class WhenBookingPetsIntoAPetHotel {
         PetHotel petHotel = new PetHotel();
         Pet lassie = new Pet("Lassie", Breed.Dog);
         petHotel.checkIn(lassie);
-        assertThat(petHotel.getPets()).contains(lassie);
+        assertThat(petHotel.getPets()).containsValues(lassie);
     }
 
     @Test
@@ -32,9 +35,9 @@ public class WhenBookingPetsIntoAPetHotel {
         petHotel.checkIn(lassie);
         petHotel.checkIn(nemo);
         petHotel.checkIn(lady);
-        assertThat(petHotel.getPets()).contains(lassie);
-        assertThat(petHotel.getPets()).contains(nemo);
-        assertThat(petHotel.getPets()).contains(lady);
+        assertThat(petHotel.getPets()).containsValues(lassie);
+        assertThat(petHotel.getPets()).containsValues(nemo);
+        assertThat(petHotel.getPets()).containsValues(lady);
     }
 
     @Test
@@ -43,11 +46,20 @@ public class WhenBookingPetsIntoAPetHotel {
         Pet lassie = new Pet("Lassie", Breed.Dog);
         petHotel.checkIn(lassie);
         petHotel.checkIn(lassie);
-        assertThat(petHotel.getPets()).containsExactly(lassie);
+        assertThat(petHotel.getPets()).containsOnly(MapEntry.entry(lassie.getName(), lassie));
     }
 
     @Test
     public void should_be_able_to_retrieve_checked_in_pets_in_alphabetical_order() throws Exception {
+        PetHotel petHotel = new PetHotel();
+        Pet lassie = new Pet("Lassie", Breed.Dog);
+        Pet nemo = new Pet("Nemo", Breed.Fish);
+        Pet lady = new Pet("Lady", Breed.Dog);
+        petHotel.checkIn(lassie);
+        petHotel.checkIn(nemo);
+        petHotel.checkIn(lady);
+        //http://stackoverflow.com/questions/3047051/how-to-determine-if-a-list-is-sorted-in-java
+        assertThat(Ordering.natural().isOrdered(petHotel.getPets().keySet())).isTrue();
     }
 
     @Test

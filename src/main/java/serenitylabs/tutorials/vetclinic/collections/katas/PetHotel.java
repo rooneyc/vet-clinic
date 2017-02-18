@@ -14,8 +14,8 @@ public class PetHotel {
 
     private Map<String, Pet> pets = new TreeMap<>();
 
-    public Collection<Pet> getPets() {
-        return pets.values();
+    public Map<String, Pet> getPets() {
+        return pets;
     }
 
     public BookingResponse checkIn(Pet pet) {
