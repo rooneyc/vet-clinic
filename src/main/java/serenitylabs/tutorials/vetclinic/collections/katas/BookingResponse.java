@@ -7,7 +7,8 @@ import serenitylabs.tutorials.vetclinic.Pet;
  */
 public class BookingResponse {
 
-    Pet pet;
+    private Pet pet;
+    private int bookingNumber;
 
     public BookingResponse(Pet pet) {
         this.pet = pet;
@@ -15,5 +16,13 @@ public class BookingResponse {
 
     public Pet getPet() {
         return pet;
+    }
+
+    public int getBookingNumber() {
+        return bookingNumber;
+    }
+
+    public boolean isConfirmed() {
+        return true;
     }
 }

@@ -12,7 +12,7 @@ import java.util.TreeMap;
  */
 public class PetHotel {
 
-    Map<String, Pet> pets = new TreeMap<>();
+    private Map<String, Pet> pets = new TreeMap<>();
 
     public Collection<Pet> getPets() {
         return pets.values();

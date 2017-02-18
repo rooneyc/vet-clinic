@@ -56,6 +56,8 @@ public class WhenBookingPetsIntoAPetHotel {
         Pet lassie = new Pet("Lassie", Breed.Dog);
         BookingResponse bookingResponse = petHotel.checkIn(lassie);
         assertThat(bookingResponse.getPet()).isEqualTo(lassie);
+        assertThat(bookingResponse.getBookingNumber()).isEqualTo(0);
+        assertThat(bookingResponse.isConfirmed()).isTrue();
     }
 
     @Test
