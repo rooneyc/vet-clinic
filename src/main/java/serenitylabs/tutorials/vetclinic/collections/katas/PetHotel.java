@@ -4,19 +4,21 @@ import serenitylabs.tutorials.vetclinic.Pet;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Map;
+import java.util.TreeMap;
 
 /**
  * Created by 83018 on 18/02/2017.
  */
 public class PetHotel {
 
-    ArrayList pets = new ArrayList<Pet>();
+    Map pets = new TreeMap<String, Pet>();
 
     public Collection<Pet> getPets() {
-        return pets;
+        return pets.values();
     }
 
     public void checkIn(Pet pet) {
-        pets.add(pet);
+        pets.put(pet.getName(), pet);
     }
 }
