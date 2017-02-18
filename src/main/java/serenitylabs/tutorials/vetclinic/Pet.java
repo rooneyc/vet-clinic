@@ -2,6 +2,9 @@ package serenitylabs.tutorials.vetclinic;
 
 import com.google.common.base.Objects;
 
+import java.util.Collection;
+import java.util.List;
+
 public class Pet {
     private final String name;
     private final Breed breed;
