@@ -25,6 +25,16 @@ public class WhenBookingPetsIntoAPetHotel {
 
     @Test
     public void should_be_able_to_check_in_several_pets() throws Exception {
+        PetHotel petHotel = new PetHotel();
+        Pet lassie = new Pet("Lassie", Breed.Dog);
+        Pet nemo = new Pet("Nemo", Breed.Fish);
+        Pet lady = new Pet("Lady", Breed.Dog);
+        petHotel.checkIn(lassie);
+        petHotel.checkIn(nemo);
+        petHotel.checkIn(lady);
+        assertThat(petHotel.getPets()).contains(lassie);
+        assertThat(petHotel.getPets()).contains(nemo);
+        assertThat(petHotel.getPets()).contains(lady);
     }
 
     @Test
