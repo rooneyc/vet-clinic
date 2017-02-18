@@ -1,6 +1,8 @@
 package serenitylabs.tutorials.vetclinic.collections.katas;
 
 import org.junit.Test;
+import serenitylabs.tutorials.vetclinic.Breed;
+import serenitylabs.tutorials.vetclinic.Pet;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -15,6 +17,10 @@ public class WhenBookingPetsIntoAPetHotel {
 
     @Test
     public void should_be_able_to_check_a_pet_into_the_hotel() throws Exception {
+        PetHotel petHotel = new PetHotel();
+        Pet lassie = new Pet("Lassie", Breed.Dog);
+        petHotel.checkIn(lassie);
+        assertThat(petHotel.getPets()).contains(lassie);
     }
 
     @Test

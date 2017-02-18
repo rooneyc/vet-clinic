@@ -13,4 +13,7 @@ public class PetHotel {
     public Collection<Pet> getPets() {
         return new ArrayList<>();
     }
+
+    public void checkIn(Pet lassie) {
+    }
 }
