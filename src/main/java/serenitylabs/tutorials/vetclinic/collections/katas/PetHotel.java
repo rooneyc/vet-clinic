@@ -2,6 +2,7 @@ package serenitylabs.tutorials.vetclinic.collections.katas;
 
 import serenitylabs.tutorials.vetclinic.Pet;
 
+import java.util.ArrayList;
 import java.util.Collection;
 
 /**
@@ -10,6 +11,6 @@ import java.util.Collection;
 public class PetHotel {
 
     public Collection<Pet> getPets() {
-        return null;
+        return new ArrayList<>();
     }
 }
