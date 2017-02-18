@@ -10,10 +10,13 @@ import java.util.Collection;
  */
 public class PetHotel {
 
+    ArrayList pets = new ArrayList<Pet>();
+
     public Collection<Pet> getPets() {
-        return new ArrayList<>();
+        return pets;
     }
 
-    public void checkIn(Pet lassie) {
+    public void checkIn(Pet pet) {
+        pets.add(pet);
     }
 }
