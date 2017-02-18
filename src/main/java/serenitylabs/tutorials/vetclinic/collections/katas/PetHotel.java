@@ -12,13 +12,14 @@ import java.util.TreeMap;
  */
 public class PetHotel {
 
-    Map pets = new TreeMap<String, Pet>();
+    Map<String, Pet> pets = new TreeMap<>();
 
     public Collection<Pet> getPets() {
         return pets.values();
     }
 
-    public void checkIn(Pet pet) {
+    public BookingResponse checkIn(Pet pet) {
         pets.put(pet.getName(), pet);
+        return new BookingResponse(pet);
     }
 }
