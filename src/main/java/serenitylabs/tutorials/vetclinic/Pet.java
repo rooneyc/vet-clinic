@@ -5,10 +5,12 @@ import com.google.common.base.Objects;
 public class Pet {
     private final String name;
     private final Breed breed;
+    private Gender gender;
 
     public Pet(String name, Breed breed) {
         this.name = name;
         this.breed = breed;
+        this.gender = Gender.Unknown;
     }
 
     public String getName() {
@@ -17,6 +19,10 @@ public class Pet {
 
     public Breed getBreed() {
         return breed;
+    }
+
+    public Gender getGender() {
+        return gender;
     }
 
     public static PetBuilder dog() { return new PetBuilder(Breed.Dog);}
