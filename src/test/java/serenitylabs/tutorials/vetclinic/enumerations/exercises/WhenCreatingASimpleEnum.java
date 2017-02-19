@@ -26,7 +26,7 @@ public class WhenCreatingASimpleEnum {
 
         // TODO: Refactor the Pet builder method to allow the following construct:
 
-        Pet lassie = Pet.dog().named("Lassie").withGender(Gender.Male);
+        Pet lassie = Pet.dog().withGender(Gender.Male).named("Lassie");
 
         // TODO:
         // assertThat(lassie.getGender(), equalTo(Gender.Male));
