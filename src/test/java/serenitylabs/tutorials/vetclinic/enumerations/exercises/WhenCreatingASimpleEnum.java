@@ -16,7 +16,7 @@ public class WhenCreatingASimpleEnum {
 
         // TODO: assertThat(unidentifiedTabby.getGender(), equalTo(Gender.Unknown));
 
-        assertThat(unidentifiedTabby.getGender()).isEqualTo(Gender.Unknown);
+        assertThat(Gender.Unknown).isEqualTo(unidentifiedTabby.getGender());
 
 
     }
@@ -26,12 +26,13 @@ public class WhenCreatingASimpleEnum {
 
         // TODO: Refactor the Pet builder method to allow the following construct:
 
-        Pet lassie = null;
+        Pet lassie = Pet.dog().named("Lassie").withGender(Gender.Male);
 
         // TODO:
         // assertThat(lassie.getGender(), equalTo(Gender.Male));
 
-    }
+        assertThat(Gender.Male).isEqualTo(lassie.getGender());
 
+    }
 
 }

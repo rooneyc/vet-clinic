@@ -25,6 +25,11 @@ public class Pet {
         return gender;
     }
 
+    public Pet withGender(Gender gender) {
+        this.gender = gender;
+        return this;
+    }
+
     public static PetBuilder dog() { return new PetBuilder(Breed.Dog);}
     public static PetBuilder cat() { return new PetBuilder(Breed.Cat);}
     public static PetBuilder rabbit() { return new PetBuilder(Breed.Rabbit);}
@@ -39,6 +44,10 @@ public class Pet {
         }
 
         public Pet named(String name) {
+            return new Pet(name, breed);
+        }
+
+        public Pet withGender(String name) {
             return new Pet(name, breed);
         }
 
