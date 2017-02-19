@@ -270,6 +270,64 @@ public class WhenBookingPetsIntoAPetHotel {
 
         Pet parrot4 = new Pet("parrot4", Breed.Parrot);
         petHotel.checkIn(parrot4);  //21
+
+        petHotel.checkOut(lassie);
+
+        assertThat(petHotel.getPets()).contains(parrot4);
+
+    }
+
+    @Test
+    public void pets_on_the_waiting_list_should_be_admitted_on_a_first_come_first_served_basis() throws Exception {
+        //Covered by pets_on_the_waiting_list_should_be_added_to_the_hotel_when_a_place_is_freed  ???
+        //Tutorial for pets_on_the_waiting_list_should_be_added_to_the_hotel_when_a_place_is_freed
+        //says "Ensure that when a pet checks out of the hotel, the first pet on the waiting list is automatically checked in. "
+
+        PetHotel petHotel = new PetHotel();
+
+        Pet lassie = new Pet("Lassie", Breed.Dog);
+        petHotel.checkIn(lassie);   //01
+        Pet nemo = new Pet("Nemo", Breed.Fish);
+        petHotel.checkIn(nemo);     //02
+        Pet lady = new Pet("Lady", Breed.Dog);
+        petHotel.checkIn(lady);     //03
+        Pet garfield = new Pet("Garfield", Breed.Cat);
+        petHotel.checkIn(garfield); //04
+        Pet nermal = new Pet("Nermal", Breed.Cat);
+        petHotel.checkIn(nermal);   //05
+        Pet dog1 = new Pet("dog1", Breed.Dog);
+        petHotel.checkIn(dog1);     //06
+        Pet dog2 = new Pet("dog2", Breed.Dog);
+        petHotel.checkIn(dog2);     //07
+        Pet dog3 = new Pet("dog3", Breed.Dog);
+        petHotel.checkIn(dog3);     //08
+        Pet cat1 = new Pet("cat1", Breed.Cat);
+        petHotel.checkIn(cat1);     //09
+        Pet cat2 = new Pet("cat2", Breed.Cat);
+        petHotel.checkIn(cat2);     //10
+        Pet cat3 = new Pet("cat3", Breed.Cat);
+        petHotel.checkIn(cat3);     //11
+        Pet rabbit1 = new Pet("rabbit1", Breed.Rabbit);
+        petHotel.checkIn(rabbit1);  //12
+        Pet rabbit2 = new Pet("rabbit2", Breed.Rabbit);
+        petHotel.checkIn(rabbit2);  //13
+        Pet rabbit3 = new Pet("rabbit3", Breed.Rabbit);
+        petHotel.checkIn(rabbit3);  //14
+        Pet fish1 = new Pet("fish1", Breed.Fish);
+        petHotel.checkIn(fish1);    //15
+        Pet fish2 = new Pet("fish2", Breed.Fish);
+        petHotel.checkIn(fish2);    //16
+        Pet fish3 = new Pet("fish3", Breed.Fish);
+        petHotel.checkIn(fish3);    //17
+        Pet parrot1 = new Pet("parrot1", Breed.Parrot);
+        petHotel.checkIn(parrot1);  //18
+        Pet parrot2 = new Pet("parrot2", Breed.Parrot);
+        petHotel.checkIn(parrot2);  //19
+        Pet parrot3 = new Pet("parrot3", Breed.Parrot);
+        petHotel.checkIn(parrot3);  //20
+
+        Pet parrot4 = new Pet("parrot4", Breed.Parrot);
+        petHotel.checkIn(parrot4);  //21
         Pet parrot5 = new Pet("parrot5", Breed.Parrot);
         petHotel.checkIn(parrot5);  //21
 
@@ -277,13 +335,6 @@ public class WhenBookingPetsIntoAPetHotel {
 
         assertThat(petHotel.getPets()).contains(parrot4);
         assertThat(petHotel.getPets()).doesNotContain(parrot5);
-
-    }
-
-
-    @Test
-    public void pets_on_the_waiting_list_should_be_admitted_on_a_first_come_first_served_basis() throws Exception {
     }
 
 }
-
