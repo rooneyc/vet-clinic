@@ -40,7 +40,10 @@ public class PetHotel {
         return waitingList;
     }
 
-    public void checkOut(Pet lassie) {
-
+    public void checkOut(Pet pet) {
+        pets.remove(pet);
+        if (!waitingList.isEmpty()) {
+            pets.add(waitingList.poll());
+        }
     }
 }
