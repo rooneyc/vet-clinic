@@ -11,5 +11,5 @@ public class BookingReply extends BookingResponse {
     }
 
     @Override
-    public boolean isOnWaitingList() { return false;}
+    public boolean isOnWaitingList() { return true;}
 }
