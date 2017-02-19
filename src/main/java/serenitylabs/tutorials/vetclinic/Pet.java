@@ -1,7 +1,5 @@
 package serenitylabs.tutorials.vetclinic;
 
-import com.google.common.base.Objects;
-
 public class Pet {
     private final String name;
     private final Breed breed;
