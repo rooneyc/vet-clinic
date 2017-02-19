@@ -1,5 +1,7 @@
 package serenitylabs.tutorials.vetclinic;
 
+import com.google.common.base.Objects;
+
 public class Pet {
     private final String name;
     private final Breed breed;
@@ -33,6 +35,25 @@ public class Pet {
         public Pet named(String name) {
             return new Pet(name, breed);
         }
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Pet pet = (Pet) o;
+
+        if (!name.equals(pet.name)) return false;
+        return breed == pet.breed;
+
+    }
+
+    @Override
+    public int hashCode() {
+        int result = name.hashCode();
+        result = 31 * result + breed.hashCode();
+        return result;
     }
 
     @Override
