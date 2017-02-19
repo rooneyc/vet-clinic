@@ -6,6 +6,8 @@ import serenitylabs.tutorials.vetclinic.Pet;
 import java.util.LinkedList;
 import java.util.Queue;
 
+import static org.assertj.core.api.Assertions.assertThat;
+
 public class WhenWorkingWithAPetQueue {
 
     @Test
@@ -15,7 +17,9 @@ public class WhenWorkingWithAPetQueue {
         waitingList.add(Pet.cat().named("Felix"));
         waitingList.add(Pet.dog().named("Fido"));
 
-        // TODO
+        assertThat(waitingList.poll()).isEqualTo(Pet.cat().named("Felix"));
+        assertThat(waitingList.poll()).isEqualTo(Pet.dog().named("Fido"));
+
     }
 
     @Test
@@ -25,7 +29,7 @@ public class WhenWorkingWithAPetQueue {
         waitingList.add(Pet.cat().named("Felix"));
         waitingList.add(Pet.dog().named("Fido"));
 
-        // TODO
+        assertThat(waitingList.peek()).isEqualTo(Pet.cat().named("Felix"));
     }
 
 
