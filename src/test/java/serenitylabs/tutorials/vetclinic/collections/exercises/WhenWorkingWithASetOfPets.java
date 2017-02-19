@@ -35,7 +35,7 @@ public class WhenWorkingWithASetOfPets {
 
         names.addAll(Sets.newHashSet("Felix","Spot"));
 
-        // TODO
+        assertThat(names).containsOnly("Fido", "Felix", "Spot");
     }
 
 
