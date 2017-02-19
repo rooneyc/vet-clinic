@@ -21,6 +21,8 @@ public class PetHotel {
     //Would work if was sorting a Tree Set of Pets....
     private Collection<Pet> pets = new TreeSet<Pet>(comparing(Pet::getName, naturalOrder()));
 
+    private Queue<Pet> waitingList = new LinkedList<>();
+
     public Collection<Pet> getPets() {
         return pets;
     }
@@ -31,5 +33,9 @@ public class PetHotel {
         }
         pets.add(pet);
         return new BookingResponse(pet);
+    }
+
+    public Queue<Pet> getWaitingList() {
+        return waitingList;
     }
 }
