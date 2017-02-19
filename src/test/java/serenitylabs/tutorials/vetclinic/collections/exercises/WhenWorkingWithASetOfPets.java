@@ -5,13 +5,15 @@ import org.junit.Test;
 
 import java.util.Set;
 
+import static org.assertj.core.api.Assertions.assertThat;
+
 public class WhenWorkingWithASetOfPets {
 
     @Test
     public void should_add_Fido_to_the_set_of_pets() {
         Set<String> names = Sets.newHashSet();
 
-        // TODO
+        assertThat(names).contains("Fido");
     }
 
     @Test
