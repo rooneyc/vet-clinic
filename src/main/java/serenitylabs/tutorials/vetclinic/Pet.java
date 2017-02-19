@@ -51,9 +51,7 @@ public class Pet {
 
     @Override
     public int hashCode() {
-        int result = name.hashCode();
-        result = 31 * result + breed.hashCode();
-        return result;
+        return Objects.hashCode(name, breed);
     }
 
     @Override
