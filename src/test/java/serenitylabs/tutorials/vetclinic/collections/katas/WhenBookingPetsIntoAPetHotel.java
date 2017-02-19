@@ -168,9 +168,8 @@ public class WhenBookingPetsIntoAPetHotel {
         BookingResponse response = petHotel.checkIn(parrot4);  //21
 
         assertThat(response.isConfirmed()).isFalse();
-
+        assertThat(response.isOnWaitingList()).isTrue();
     }
-
 
     @Test
     public void should_place_pets_on_a_waiting_list_when_the_hotel_is_full() throws Exception {

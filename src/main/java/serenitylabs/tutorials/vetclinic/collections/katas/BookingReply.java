@@ -9,4 +9,7 @@ public class BookingReply extends BookingResponse {
     public boolean isConfirmed() {
         return false;
     }
+
+    @Override
+    public boolean isOnWaitingList() { return false;}
 }

@@ -27,4 +27,8 @@ public class BookingResponse {
     public boolean isConfirmed() {
         return true;
     }
+
+    public boolean isOnWaitingList() {
+        return false;
+    }
 }
