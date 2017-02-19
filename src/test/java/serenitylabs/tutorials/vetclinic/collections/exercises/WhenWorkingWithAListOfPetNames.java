@@ -3,7 +3,7 @@ package serenitylabs.tutorials.vetclinic.collections.exercises;
 import com.google.common.collect.Lists;
 import org.junit.Test;
 
-import java.util.List;
+import java.util.*;
 
 import static org.hamcrest.Matchers.contains;
 import static org.junit.Assert.assertThat;
@@ -14,15 +14,14 @@ public class WhenWorkingWithAListOfPetNames {
     public void should_add_Fido_to_the_list_of_pets() {
         List<String> names = Lists.newArrayList();
 
-        // TODO
-
+        names.add("Fido");
         assertThat(names, contains("Fido"));
     }
 
     @Test
     public void should_remove_Fido_from_the_list_of_pets() {
         List<String> names = Lists.newArrayList("Felix","Fido","Spot");
-        // TODO
+        names.remove("Fido");
 
         assertThat(names, contains("Felix","Spot"));
     }
@@ -31,7 +30,7 @@ public class WhenWorkingWithAListOfPetNames {
     public void should_remove_the_first_pet_from_the_list_of_pets() {
         List<String> names = Lists.newArrayList("Felix","Fido","Spot");
 
-        // TODO
+        names.remove(0);
 
         assertThat(names, contains("Fido","Spot"));
     }
@@ -41,8 +40,8 @@ public class WhenWorkingWithAListOfPetNames {
         List<String> cats = Lists.newArrayList("Felix","Spot");
         List<String> dogs = Lists.newArrayList("Fido","Rover");
 
-        // TODO
-        List<String> catsAndDogs = null;
+        List<String> catsAndDogs = new ArrayList<>(cats);
+        catsAndDogs.addAll(dogs);
 
         assertThat(catsAndDogs, contains("Felix","Spot","Fido","Rover"));
     }
@@ -52,8 +51,8 @@ public class WhenWorkingWithAListOfPetNames {
         List<String> cats = Lists.newArrayList("Felix","Spot");
         List<String> dogs = Lists.newArrayList("Fido","Rover");
 
-        // TODO
-        List<String> catsAndDogs = null;
+        List<String> catsAndDogs = new ArrayList<>(cats);
+        catsAndDogs.addAll(1, dogs);
 
         assertThat(catsAndDogs, contains("Felix","Fido","Rover","Spot"));
     }
@@ -62,7 +61,7 @@ public class WhenWorkingWithAListOfPetNames {
     public void should_organise_pets_in_alphabetical_order() {
         List<String> pets = Lists.newArrayList("Felix","Spot","Fido","Rover");
 
-        // TODO
+        Collections.sort(pets);
 
         assertThat(pets, contains("Felix","Fido","Rover","Spot"));
     }
@@ -71,7 +70,8 @@ public class WhenWorkingWithAListOfPetNames {
     public void should_organise_pets_in_reverse_alphabetical_order() {
         List<String> pets = Lists.newArrayList("Felix","Spot","Fido","Rover");
 
-        // TODO
+        Collections.sort(pets);
+        Collections.reverse(pets);
 
         assertThat(pets, contains("Spot","Rover","Fido","Felix"));
     }
@@ -80,7 +80,15 @@ public class WhenWorkingWithAListOfPetNames {
     public void should_organise_pets_by_name_length() {
         List<String> pets = Lists.newArrayList("Felix","Alfred","Spot");
 
-        // TODO
+       class OrderByNameLength implements Comparator<String> {
+
+           @Override
+           public int compare(String o1, String o2) {
+               return o1.length() - o2.length();
+           }
+       }
+
+       pets.sort(new OrderByNameLength());
 
         assertThat(pets, contains("Spot","Felix","Alfred"));
     }
