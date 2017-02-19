@@ -39,4 +39,8 @@ public class PetHotel {
     public Queue<Pet> getWaitingList() {
         return waitingList;
     }
+
+    public void checkOut(Pet lassie) {
+
+    }
 }
