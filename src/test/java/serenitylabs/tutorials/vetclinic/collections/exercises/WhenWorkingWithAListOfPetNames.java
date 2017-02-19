@@ -80,16 +80,15 @@ public class WhenWorkingWithAListOfPetNames {
     public void should_organise_pets_by_name_length() {
         List<String> pets = Lists.newArrayList("Felix","Alfred","Spot");
 
-       class OrderByNameLength implements Comparator<String> {
+        class OrderByNameLength implements Comparator<String> {
 
            @Override
            public int compare(String o1, String o2) {
                return o1.length() - o2.length();
            }
-       }
+        }
 
-       pets.sort(new OrderByNameLength());
-
+        pets.sort(new OrderByNameLength());
         assertThat(pets, contains("Spot","Felix","Alfred"));
     }
 
