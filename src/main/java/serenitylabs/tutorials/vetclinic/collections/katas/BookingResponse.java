@@ -10,6 +10,8 @@ public class BookingResponse {
     private Pet pet;
     private int bookingNumber;
 
+    public BookingResponse(){}
+
     public BookingResponse(Pet pet) {
         this.pet = pet;
     }

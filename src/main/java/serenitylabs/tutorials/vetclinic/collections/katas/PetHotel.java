@@ -27,7 +27,7 @@ public class PetHotel {
 
     public BookingResponse checkIn(Pet pet) {
         if (pets.size() == 20) {
-            return null;
+            return new BookingResponse();
         }
         pets.add(pet);
         return new BookingResponse(pet);
