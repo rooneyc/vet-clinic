@@ -26,7 +26,7 @@ public class WhenWorkingWithASetOfPets {
         names.add("Felix");
         names.add("Fido");
 
-        // TODO
+        assertThat(names).containsOnly("Fido", "Felix");
     }
 
     @Test
