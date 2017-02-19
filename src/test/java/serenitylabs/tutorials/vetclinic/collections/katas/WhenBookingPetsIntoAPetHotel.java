@@ -8,7 +8,6 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 public class WhenBookingPetsIntoAPetHotel {
 
-
     @Test
     public void the_hotel_should_initially_have_no_pets_booked() {
         PetHotel petHotel = new PetHotel();
