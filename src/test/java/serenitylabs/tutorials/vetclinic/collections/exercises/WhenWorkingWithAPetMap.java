@@ -32,7 +32,7 @@ public class WhenWorkingWithAPetMap {
         pets.put("Fido", fido);
         pets.put("Stray", stray);
 
-        // TODO
+        org.assertj.core.api.Assertions.assertThat(pets.getOrDefault("default", stray)).isSameAs(stray);
     }
 
     @Test
