@@ -13,6 +13,8 @@ public class WhenWorkingWithASetOfPets {
     public void should_add_Fido_to_the_set_of_pets() {
         Set<String> names = Sets.newHashSet();
 
+        names.add("Fido");
+
         assertThat(names).contains("Fido");
     }
 
