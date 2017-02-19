@@ -114,6 +114,7 @@ public class WhenBookingPetsIntoAPetHotel {
         petHotel.checkIn(parrot3);  //20
         Pet parrot4 = new Pet("parrot4", Breed.Parrot);
         petHotel.checkIn(parrot4);  //21
+
         assertThat(petHotel.getPets()).doesNotContain(parrot4);
     }
 
