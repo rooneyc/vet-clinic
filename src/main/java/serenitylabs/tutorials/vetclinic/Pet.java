@@ -44,14 +44,20 @@ public class Pet {
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
         Pet pet = (Pet) o;
-        return Objects.equal(name, pet.name) && breed == pet.breed;
+        return Objects.equal(name, pet.name) &&
+                breed == pet.breed;
     }
 
     @Override
     public int hashCode() {
         return Objects.hashCode(name, breed);
     }
+
 }
