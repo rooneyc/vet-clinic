@@ -5,13 +5,16 @@ import serenitylabs.tutorials.vetclinic.Pet;
 import java.util.ArrayList;
 import java.util.Collection;
 
-/**
- * Created by 83018 on 27/02/2017.
- */
 class PetHotel {
 
+    private Collection<Pet> pets = new ArrayList<>();
+
     Collection<Pet> getPets() {
-        return new ArrayList<>();
+        return pets;
+    }
+
+    void checkIn(Pet pet) {
+        pets.add(pet);
     }
 
 }
