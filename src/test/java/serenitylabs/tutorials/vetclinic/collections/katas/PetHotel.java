@@ -2,15 +2,16 @@ package serenitylabs.tutorials.vetclinic.collections.katas;
 
 import serenitylabs.tutorials.vetclinic.Pet;
 
+import java.util.ArrayList;
 import java.util.Collection;
 
 /**
  * Created by 83018 on 27/02/2017.
  */
-public class PetHotel {
+class PetHotel {
 
-    public Collection<Pet> getPets() {
-        return null;
+    Collection<Pet> getPets() {
+        return new ArrayList<>();
     }
 
 }
