@@ -16,7 +16,6 @@ public class WhenBookingPetsIntoAPetHotel {
 
         //Then
         assertThat(petHotel.getPets()).isEmpty();
-
     }
 
     @Test
@@ -35,6 +34,20 @@ public class WhenBookingPetsIntoAPetHotel {
 
     @Test
     public void should_be_able_to_check_in_several_pets() throws Exception {
+
+        //Given
+        PetHotel petHotel = new PetHotel();
+        Pet fido = Pet.dog().named("Fido");
+        Pet nemo = Pet.fish().named("Nemo");
+        Pet rob = Pet.rabbit().named("Rob");
+
+        //When
+        petHotel.checkIn(fido);
+        petHotel.checkIn(nemo);
+        petHotel.checkIn(rob);
+
+        //Then
+        assertThat(petHotel.getPets()).contains(fido, nemo, rob);
     }
 
     @Test
