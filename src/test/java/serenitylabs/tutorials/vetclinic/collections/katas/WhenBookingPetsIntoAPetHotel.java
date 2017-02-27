@@ -68,6 +68,21 @@ public class WhenBookingPetsIntoAPetHotel {
 
     @Test
     public void should_be_able_to_retrieve_checked_in_pets_in_alphabetical_order() throws Exception {
+
+        //Given
+        PetHotel petHotel = new PetHotel();
+        Pet fido = Pet.dog().named("Fido");
+        Pet nemo = Pet.fish().named("Nemo");
+        Pet rob = Pet.rabbit().named("Rob");
+
+        //When
+        petHotel.checkIn(fido);
+        petHotel.checkIn(nemo);
+        petHotel.checkIn(rob);
+
+        //Then
+        assertThat(petHotel.getPets()).containsSequence(fido, nemo, rob);
+
     }
 
     @Test
