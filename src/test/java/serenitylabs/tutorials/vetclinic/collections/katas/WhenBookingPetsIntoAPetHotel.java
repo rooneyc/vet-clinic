@@ -56,11 +56,9 @@ public class WhenBookingPetsIntoAPetHotel {
         //Given
         PetHotel petHotel = new PetHotel();
         Pet fido = Pet.dog().named("Fido");
-        Pet nemo = Pet.fish().named("Nemo");
 
         //When
         petHotel.checkIn(fido);
-        petHotel.checkIn(nemo);
         petHotel.checkIn(fido);
 
         //Then
