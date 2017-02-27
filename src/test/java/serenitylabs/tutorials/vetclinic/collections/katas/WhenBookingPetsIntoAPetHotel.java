@@ -2,11 +2,20 @@ package serenitylabs.tutorials.vetclinic.collections.katas;
 
 import org.junit.Test;
 
+import static org.assertj.core.api.Assertions.assertThat;
+
 public class WhenBookingPetsIntoAPetHotel {
 
 
     @Test
     public void the_hotel_should_initially_have_no_pets_booked() {
+
+        //Given
+        PetHotel petHotel = new PetHotel();
+
+        //Then
+        assertThat(petHotel.getPets()).isEmpty();
+
     }
 
     @Test
