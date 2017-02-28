@@ -129,7 +129,7 @@ public class WhenBookingPetsIntoAPetHotel {
 
         //Then
         assertThat(response.isConfirmed()).isFalse();
-        //assertThat(response.isOnWatingList()).isTrue();
+        assertThat(response.isOnWatingList()).isTrue();
     }
 
 
