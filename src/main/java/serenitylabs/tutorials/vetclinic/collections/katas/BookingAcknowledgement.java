@@ -14,7 +14,7 @@ class BookingAcknowledgement extends BookingResponse {
     }
 
     @Override
-    boolean isOnWatingList() {
+    boolean isOnWaitingList() {
         return true;
     }
 }

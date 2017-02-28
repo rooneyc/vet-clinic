@@ -24,7 +24,7 @@ public class BookingResponse {
         return bookingNumber;
     }
 
-    boolean isOnWatingList() {
+    boolean isOnWaitingList() {
         return true;
     }
 }
