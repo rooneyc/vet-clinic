@@ -107,20 +107,21 @@ public class WhenBookingPetsIntoAPetHotel {
 
         //Given
         PetHotel petHotel = APetHotel.with(PetHotel.MAX_CAPACITY).petsCheckedIn();
-        Pet nemo = Pet.fish().named("Nemo");
         Pet rob = Pet.rabbit().named("Rob");
 
         //When
-        petHotel.checkIn(nemo);
         petHotel.checkIn(rob);
 
         //Then
-        assertThat(petHotel.getPets()).doesNotContain(rob);
+        assertThat(petHotel.getPets()).hasSize(PetHotel.MAX_CAPACITY);
 
     }
 
     @Test
     public void should_notify_owner_that_the_hotel_is_full() throws Exception {
+
+        //Given
+
     }
 
 
