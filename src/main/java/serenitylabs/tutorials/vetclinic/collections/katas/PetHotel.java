@@ -10,7 +10,7 @@ import static java.util.Comparator.naturalOrder;
 
 class PetHotel {
 
-    private Collection<Pet> pets = new TreeSet<>(comparing(Pet::getName, naturalOrder()));
+    private final Collection<Pet> pets = new TreeSet<>(comparing(Pet::getName, naturalOrder()));
 
     static final int MAX_CAPACITY = 20;
 

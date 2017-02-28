@@ -9,12 +9,12 @@ class BookingAcknowledgement extends BookingResponse {
     }
 
     @Override
-    boolean isConfirmed() {
+    public boolean isConfirmed() {
         return false;
     }
 
     @Override
-    boolean isOnWaitingList() {
+    public boolean isOnWaitingList() {
         return true;
     }
 }

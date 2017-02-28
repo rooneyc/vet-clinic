@@ -2,18 +2,14 @@ package serenitylabs.tutorials.vetclinic.collections.katas;
 
 import serenitylabs.tutorials.vetclinic.Pet;
 
-public abstract class BookingResponse {
+abstract class BookingResponse implements BookingReply {
 
-    private Pet pet;
+    private final Pet pet;
 
     private int bookingNumber;
 
     BookingResponse(Pet pet) {
         this.pet = pet;
-    }
-
-    boolean isConfirmed() {
-        return true;
     }
 
     Pet getPet() {
@@ -24,7 +20,4 @@ public abstract class BookingResponse {
         return bookingNumber;
     }
 
-    boolean isOnWaitingList() {
-        return true;
-    }
 }
