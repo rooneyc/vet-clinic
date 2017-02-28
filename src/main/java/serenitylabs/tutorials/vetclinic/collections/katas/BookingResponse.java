@@ -2,7 +2,7 @@ package serenitylabs.tutorials.vetclinic.collections.katas;
 
 import serenitylabs.tutorials.vetclinic.Pet;
 
-public class BookingResponse {
+public abstract class BookingResponse {
 
     private Pet pet;
 
