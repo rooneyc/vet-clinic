@@ -20,7 +20,7 @@ class APetHotel {
         return new PetAdder(petCount);
     }
 
-   private static class PetAdder {
+   static class PetAdder {
 
         private static final Random random = new Random();
 

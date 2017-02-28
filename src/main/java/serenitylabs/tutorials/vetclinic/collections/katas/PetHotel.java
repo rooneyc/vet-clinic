@@ -17,7 +17,9 @@ class PetHotel {
     }
 
     BookingResponse checkIn(Pet pet) {
-        pets.add(pet);
+        if (pets.size() < 20) {
+            pets.add(pet);
+        }
         return new BookingResponse(pet);
     }
 
