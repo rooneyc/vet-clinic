@@ -10,30 +10,44 @@ import java.util.Random;
 /**
  * A utility class to generate pet hotels with pets already booked
  */
-public class APetHotel {
-    public static PetAdder with(int petCount) {
+class APetHotel {
+
+    private APetHotel(){
+        //Hide Public Constructor
+    }
+
+    static PetAdder with(int petCount) {
         return new PetAdder(petCount);
     }
 
-    public static class PetAdder {
+   private static class PetAdder {
+
+        private static final Random random = new Random();
+
+        private static final List<String> PET_NAMES = ImmutableList.of("Fido","Felix","Rover","Spot");
+
         private final int petCount;
 
-        public PetAdder(int petCount) {
+        PetAdder(int petCount) {
 
             this.petCount = petCount;
+        }
+
+        PetHotel petsCheckedIn() {
+            PetHotel petHotel = new PetHotel();
+            for (int i = 0; i < petCount; i++) {
+                petHotel.checkIn(somePet(i));
+            }
+            return petHotel;
         }
 
         private Pet somePet(int petCount) {
             return new Pet(someName(petCount), someBreed());
         }
 
-        private final static Random random = new Random();
-
         private Breed someBreed() {
             return Breed.values()[ random.nextInt(Breed.values().length) ];
         }
-
-        private final static List<String> PET_NAMES = ImmutableList.of("Fido","Felix","Rover","Spot");
 
         private String someName(int petCount) {
             return PET_NAMES.get(random.nextInt(PET_NAMES.size())) + " " + petCount;
