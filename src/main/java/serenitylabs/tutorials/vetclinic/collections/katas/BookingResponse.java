@@ -24,4 +24,7 @@ public class BookingResponse {
         return bookingNumber;
     }
 
+    boolean isOnWatingList() {
+        return true;
+    }
 }

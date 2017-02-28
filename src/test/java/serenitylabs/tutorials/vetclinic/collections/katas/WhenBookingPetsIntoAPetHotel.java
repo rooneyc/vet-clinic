@@ -121,7 +121,15 @@ public class WhenBookingPetsIntoAPetHotel {
     public void should_notify_owner_that_the_hotel_is_full() throws Exception {
 
         //Given
+        PetHotel petHotel = APetHotel.with(PetHotel.MAX_CAPACITY).petsCheckedIn();
+        Pet rob = Pet.rabbit().named("Rob");
 
+        //When
+        BookingResponse response = petHotel.checkIn(rob);
+
+        //Then
+        assertThat(response.isConfirmed()).isFalse();
+        //assertThat(response.isOnWatingList()).isTrue();
     }
 
 
