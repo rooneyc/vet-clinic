@@ -34,4 +34,9 @@ class PetHotel {
     Queue<Pet> getWaitingList() {
         return waitingList;
     }
+
+    void checkOut(Pet nemo) {
+        pets.remove(nemo);
+        pets.add(waitingList.poll());
+    }
 }

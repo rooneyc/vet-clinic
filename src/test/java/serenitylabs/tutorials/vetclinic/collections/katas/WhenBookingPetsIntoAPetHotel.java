@@ -149,11 +149,50 @@ public class WhenBookingPetsIntoAPetHotel {
 
     @Test
     public void pets_on_the_waiting_list_should_be_added_to_the_hotel_when_a_place_is_freed() throws Exception {
+
+        //Given
+        Pet nemo = Pet.fish().named("Nemo");
+        Pet rob = Pet.rabbit().named("Rob");
+
+        PetHotel petHotel = APetHotel.with(19).petsCheckedIn();
+        petHotel.checkIn(nemo);
+
+        //When
+        petHotel.checkIn(rob);
+        //And
+        petHotel.checkOut(nemo);
+
+        //Then
+        assertThat(petHotel.getPets()).contains(rob);
+
     }
 
 
     @Test
     public void pets_on_the_waiting_list_should_be_admitted_on_a_first_come_first_served_basis() throws Exception {
+
+        //Given
+        Pet nemo = Pet.fish().named("Nemo");
+        Pet rob = Pet.rabbit().named("Rob");
+        Pet fido = Pet.dog().named("Fido");
+
+        PetHotel petHotel = APetHotel.with(19).petsCheckedIn();
+        petHotel.checkIn(nemo);
+
+        //When
+        petHotel.checkIn(rob);
+        petHotel.checkIn(fido);
+        //And
+        petHotel.checkOut(nemo);
+
+        //Then
+        assertThat(petHotel.getPets()).contains(rob);
     }
 
+    //TODO
+    //what should happen if try to check out pet not in the hotel
+    //TODO
+    //should only be able to change the pets in hotel using checKIn and checkOut (defensive copy)
+
 }
+
