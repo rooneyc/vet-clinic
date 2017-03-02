@@ -1,7 +1,6 @@
 package serenitylabs.tutorials.vetclinic.collections.exercises;
 
 import com.google.common.collect.Lists;
-import com.sun.xml.internal.ws.policy.privateutil.PolicyUtils;
 import org.junit.Test;
 
 import java.util.ArrayList;
