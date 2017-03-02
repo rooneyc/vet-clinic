@@ -27,6 +27,7 @@ class PetHotel {
             pets.add(pet);
             return new BookingConfirmation(pet);
         }
+        waitingList.add(pet);
         return new BookingAcknowledgement(pet);
     }
 
