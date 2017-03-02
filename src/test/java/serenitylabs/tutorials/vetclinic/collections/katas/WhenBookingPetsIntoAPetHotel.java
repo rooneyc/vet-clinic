@@ -154,7 +154,7 @@ public class WhenBookingPetsIntoAPetHotel {
         Pet nemo = Pet.fish().named("Nemo");
         Pet rob = Pet.rabbit().named("Rob");
 
-        PetHotel petHotel = APetHotel.with(19).petsCheckedIn();
+        PetHotel petHotel = APetHotel.with(PetHotel.MAX_CAPACITY - 1).petsCheckedIn();
         petHotel.checkIn(nemo);
 
         //When
@@ -176,7 +176,7 @@ public class WhenBookingPetsIntoAPetHotel {
         Pet rob = Pet.rabbit().named("Rob");
         Pet fido = Pet.dog().named("Fido");
 
-        PetHotel petHotel = APetHotel.with(19).petsCheckedIn();
+        PetHotel petHotel = APetHotel.with(PetHotel.MAX_CAPACITY - 1).petsCheckedIn();
         petHotel.checkIn(nemo);
 
         //When
