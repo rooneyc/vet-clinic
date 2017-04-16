@@ -13,11 +13,17 @@ public class WhenPlayingBall {
     @Test
     public void should_play_football_on_sundays() {
 
+        //Given
         Child bill = new Child();
 
+        //When
         Game gamePlayed = bill.goPlayBallOn(A_SUNDAY);
 
+        //Then
         assertThat(gamePlayed, equalTo(Game.Football));
     }
+
+
+
 
 }
