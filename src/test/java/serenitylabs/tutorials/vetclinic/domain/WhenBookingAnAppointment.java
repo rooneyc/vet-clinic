@@ -21,5 +21,14 @@ public class WhenBookingAnAppointment {
 
     }
 
+    @Test
+    public void an_appointment_can_have_an_optional_reason() {
+
+        Appointment appointment = Appointment.forPetCalled("Fido").ownedBy("Fred").because("He is sick").at(TODAY_AT_2_PM);
+
+        assertThat(appointment.getReason().isPresent()).isTrue();
+        assertThat(appointment.getReason().get()).isEqualTo("He is sick");
+
+    }
 
 }
