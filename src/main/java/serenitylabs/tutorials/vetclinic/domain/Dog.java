@@ -1,6 +1,6 @@
 package serenitylabs.tutorials.vetclinic.domain;
 
-import org.apache.commons.lang3.StringUtils;
+import com.google.common.base.Joiner;
 
 import java.util.Arrays;
 import java.util.List;
@@ -32,7 +32,15 @@ public class Dog {
     @Override
     public String toString() {
 
-        return name + " the " + (StringUtils.join(colours, ',') + " " + breed).toLowerCase();
+//        Using apache.commons.lang3
+//        return name + " the " + (StringUtils.join(colours, ',') + " " + breed).toLowerCase();
+
+//        Using Java 8
+//        return name + " the " + (String.join(",", colours) + " " + breed).toLowerCase();
+
+//        Using Guava
+        return name + " the " + (Joiner.on("," ).join(colours) + " " + breed).toLowerCase();
+
     }
 
     public static DogBuilder called(String name) {
