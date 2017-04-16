@@ -9,6 +9,7 @@ import static org.hamcrest.Matchers.equalTo;
 import static org.hamcrest.Matchers.is;
 public class WhenWeBookAnAppointment {
 
+    private static final LocalDateTime TODAY_AT_1_PM = LocalDateTime.now().withHour(1).withMinute(0);
     private static final LocalDateTime TODAY_AT_2_PM = LocalDateTime.now().withHour(2).withMinute(0);
     private static final LocalDateTime TODAY_AT_3_PM = LocalDateTime.now().withHour(3).withMinute(0);
 
@@ -49,14 +50,25 @@ public class WhenWeBookAnAppointment {
     }
 
     @Test
-    public void should_be_able_to_check_if_an_appointment_is_before_a_time() throws Exception {
+    public void should_be_able_to_check_if_an_appointment_is_before_a_datetime() throws Exception {
 
         //When
         Appointment appointment = Appointment.forPetCalled("Fido").ownedBy("Fred").because("He is sick").at(TODAY_AT_2_PM);
 
         //Then
-        //org.junit.Assert.assertThat(appointment.isBefore(TODAY_AT_3_PM), is(equalTo(TODAY_AT_2_PM)));
-
-
+        org.junit.Assert.assertTrue(appointment.isBefore(TODAY_AT_3_PM));
+        org.assertj.core.api.Assertions.assertThat(appointment.isBefore(TODAY_AT_3_PM)).isTrue();
     }
+
+    @Test
+    public void should_be_able_to_check_if_an_appointment_is_after_a_datetime() throws Exception {
+
+        //When
+        Appointment appointment = Appointment.forPetCalled("Fido").ownedBy("Fred").because("He is sick").at(TODAY_AT_2_PM);
+
+        //Then
+        org.junit.Assert.assertTrue(appointment.isAfter(TODAY_AT_1_PM));
+        org.assertj.core.api.Assertions.assertThat(appointment.isAfter(TODAY_AT_1_PM)).isTrue();
+    }
+
 }
