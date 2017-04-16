@@ -8,14 +8,12 @@ public class WhenWeCreateANewDog {
     @Test
     public void a_new_dog_should_have_a_name() throws Exception {
 
-        //Given
-        Dog fido = new Dog();
-
         //When
-        fido.setName("Fido");
+        Dog fido = new Dog("Fido", "Labrador");
 
         //Then
         Assert.assertEquals(fido.getName(), "Fido");
+        Assert.assertEquals(fido.getBreed(), "Labrador");
 
     }
 }
