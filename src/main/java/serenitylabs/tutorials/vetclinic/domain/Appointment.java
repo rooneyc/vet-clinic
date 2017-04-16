@@ -1,7 +1,8 @@
 package serenitylabs.tutorials.vetclinic.domain;
 
+import com.google.common.base.Optional;
+
 import java.time.LocalDateTime;
-import java.util.Optional;
 
 class Appointment {
 
@@ -35,7 +36,7 @@ class Appointment {
     }
 
     Optional<String> getReason() {
-        return Optional.ofNullable(reason);
+        return Optional.fromNullable(reason);
     }
 
     static class AppointmentBooker {
