@@ -5,6 +5,8 @@ import org.junit.Test;
 
 import java.time.LocalDateTime;
 
+import static org.assertj.core.api.Assertions.assertThat;
+
 public class WhenWeCreateAnAppointment {
 
     private static final LocalDateTime TODAY_AT_2_PM = LocalDateTime.now().withHour(2).withMinute(0);
@@ -18,6 +20,22 @@ public class WhenWeCreateAnAppointment {
         Assert.assertEquals("Fred",appointment.getOwner());
         Assert.assertEquals(TODAY_AT_2_PM,appointment.getAppointmentTime());
     }
+
+    @Test
+    public void an_appointment_can_have_an_optional_reason() {
+
+        Appointment appointment = Appointment.forPetCalled("Fido").ownedBy("Fred").because("He is sick").at(TODAY_AT_2_PM);
+
+        Assert.assertEquals(true,appointment.getReason().isPresent());
+        Assert.assertEquals("He is sick",appointment.getReason().get());
+    }
+
+
+
+
+
+
+
 
 
 }
