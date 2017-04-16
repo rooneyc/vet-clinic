@@ -30,12 +30,4 @@ public class WhenWeCreateAnAppointment {
         Assert.assertEquals("He is sick",appointment.getReason().get());
     }
 
-
-
-
-
-
-
-
-
 }

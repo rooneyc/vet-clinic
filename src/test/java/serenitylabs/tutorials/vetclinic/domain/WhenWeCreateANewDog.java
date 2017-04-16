@@ -11,7 +11,6 @@ public class WhenWeCreateANewDog {
         //When
         Dog fido = Dog.called("Fido").ofBreed("Labrador").andOfColour("Black");
 
-
         //Then
         Assert.assertEquals(fido.getName(), "Fido");
         Assert.assertEquals(fido.getBreed(), "Labrador");
