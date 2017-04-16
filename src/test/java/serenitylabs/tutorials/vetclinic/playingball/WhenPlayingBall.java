@@ -4,10 +4,8 @@ import org.junit.Test;
 import serenitylabs.tutorials.vetclinic.playingball.model.Child;
 import serenitylabs.tutorials.vetclinic.playingball.model.Game;
 
-import static org.hamcrest.MatcherAssert.assertThat;
-import static org.hamcrest.Matchers.equalTo;
-import static serenitylabs.tutorials.vetclinic.playingball.SampleDates.A_SATURDAY;
-import static serenitylabs.tutorials.vetclinic.playingball.SampleDates.A_SUNDAY;
+import static org.assertj.core.api.Assertions.assertThat;
+import static serenitylabs.tutorials.vetclinic.playingball.SampleDates.*;
 
 public class WhenPlayingBall {
 
@@ -21,7 +19,7 @@ public class WhenPlayingBall {
         Game gamePlayed = bill.goPlayBallOn(A_SUNDAY);
 
         //Then
-        assertThat(gamePlayed, equalTo(Game.Football));
+        assertThat(gamePlayed).isEqualTo(Game.Football);
     }
 
     @Test
@@ -34,7 +32,19 @@ public class WhenPlayingBall {
         Game gamePlayed = bill.goPlayBallOn(A_SATURDAY);
 
         //Then
-        assertThat(gamePlayed, equalTo(Game.Football));
+        assertThat(gamePlayed).isEqualTo(Game.Football);
+    }
 
+    @Test
+    public void should_play_handball_on_week_days() throws Exception {
+
+        //Given
+        Child bill = new Child();
+
+        //When
+        Game gamePlayed = bill.goPlayBallOn(A_MONDAY);
+
+        //Then
+        assertThat(gamePlayed).isEqualTo(Game.Handball);
     }
 }
