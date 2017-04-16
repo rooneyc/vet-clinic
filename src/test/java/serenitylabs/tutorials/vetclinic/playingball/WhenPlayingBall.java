@@ -3,6 +3,7 @@ package serenitylabs.tutorials.vetclinic.playingball;
 import org.junit.Test;
 import serenitylabs.tutorials.vetclinic.playingball.model.Child;
 import serenitylabs.tutorials.vetclinic.playingball.model.Game;
+import serenitylabs.tutorials.vetclinic.playingball.model.SportsSchedule;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static serenitylabs.tutorials.vetclinic.playingball.SampleDates.*;
@@ -13,7 +14,7 @@ public class WhenPlayingBall {
     public void should_play_football_on_sundays() {
 
         //Given
-        Child bill = new Child();
+        Child bill = new Child(new SportsSchedule());
 
         //When
         Game gamePlayed = bill.goPlayBallOn(A_SUNDAY);
@@ -26,7 +27,7 @@ public class WhenPlayingBall {
     public void should_play_football_on_saturdays() throws Exception {
 
         //Given
-        Child bill = new Child();
+        Child bill = new Child(new SportsSchedule());
 
         //When
         Game gamePlayed = bill.goPlayBallOn(A_SATURDAY);
@@ -39,7 +40,7 @@ public class WhenPlayingBall {
     public void should_play_handball_on_week_days() throws Exception {
 
         //Given
-        Child bill = new Child();
+        Child bill = new Child(new SportsSchedule());
 
         //When
         Game gamePlayed = bill.goPlayBallOn(A_MONDAY);
@@ -49,13 +50,13 @@ public class WhenPlayingBall {
     }
 
     @Test
-    public void should_play_tennis_on_wednesdays() throws Exception {
+    public void should_play_tennis_on_wednesdays_in_winter() throws Exception {
 
         //Given
-        Child bill = new Child();
+        Child bill = new Child(new SportsSchedule());
 
         //When
-        Game gamePlayed = bill.goPlayBallOn(A_WEDNESDAY);
+        Game gamePlayed = bill.goPlayBallOn(A_WEDNESDAY_IN_WINTER);
 
         //Then
         assertThat(gamePlayed).isEqualTo(Game.Tennis);

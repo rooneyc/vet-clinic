@@ -3,8 +3,7 @@ package serenitylabs.tutorials.vetclinic.playingball;
 import java.time.LocalDate;
 import java.time.Month;
 
-import static java.time.Month.AUGUST;
-import static java.time.Month.SEPTEMBER;
+import static java.time.Month.*;
 
 public class SampleDates {
     public static final LocalDate A_SATURDAY = LocalDate.of(2016, AUGUST, 27);
@@ -12,6 +11,7 @@ public class SampleDates {
     public static final LocalDate A_MONDAY = LocalDate.of(2016, AUGUST, 29);
     public static final LocalDate A_TUESDAY = LocalDate.of(2016, AUGUST, 30);
     public static final LocalDate A_WEDNESDAY = LocalDate.of(2016, AUGUST, 31);
+    public static final LocalDate A_WEDNESDAY_IN_WINTER = LocalDate.of(2017, JANUARY, 4);
     public static final LocalDate A_THURSDAY = LocalDate.of(2016, SEPTEMBER, 1);
     public static final LocalDate A_FRIDAY = LocalDate.of(2016, SEPTEMBER, 2);
 
