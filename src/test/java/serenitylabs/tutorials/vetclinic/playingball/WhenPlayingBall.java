@@ -47,4 +47,18 @@ public class WhenPlayingBall {
         //Then
         assertThat(gamePlayed).isEqualTo(Game.Handball);
     }
+
+    @Test
+    public void should_play_tennis_on_wednesdays() throws Exception {
+
+        //Given
+        Child bill = new Child();
+
+        //When
+        Game gamePlayed = bill.goPlayBallOn(A_WEDNESDAY);
+
+        //Then
+        assertThat(gamePlayed).isEqualTo(Game.Tennis);
+
+    }
 }
