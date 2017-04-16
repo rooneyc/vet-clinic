@@ -6,6 +6,7 @@ import serenitylabs.tutorials.vetclinic.playingball.model.Game;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.equalTo;
+import static serenitylabs.tutorials.vetclinic.playingball.SampleDates.A_SATURDAY;
 import static serenitylabs.tutorials.vetclinic.playingball.SampleDates.A_SUNDAY;
 
 public class WhenPlayingBall {
@@ -23,7 +24,17 @@ public class WhenPlayingBall {
         assertThat(gamePlayed, equalTo(Game.Football));
     }
 
+    @Test
+    public void should_play_football_on_saturdays() throws Exception {
 
+        //Given
+        Child bill = new Child();
 
+        //When
+        Game gamePlayed = bill.goPlayBallOn(A_SATURDAY);
 
+        //Then
+        assertThat(gamePlayed, equalTo(Game.Football));
+
+    }
 }
