@@ -1,15 +1,20 @@
 package serenitylabs.tutorials.vetclinic.domain;
 
+import org.apache.commons.lang3.StringUtils;
+
+import java.util.Arrays;
+import java.util.List;
+
 public class Dog {
     private final String name;
     private final String breed;
-    private final String colour;
+    private final List<String> colours;
 
-    public Dog(String name, String breed, String colour) {
+    public Dog(String name, String breed, List<String> colour) {
 
         this.name = name;
         this.breed = breed;
-        this.colour = colour;
+        this.colours = colour;
     }
 
     public String getName() {
@@ -20,8 +25,14 @@ public class Dog {
         return breed;
     }
 
-    public String getColour() {
-        return colour;
+    public List<String> getColours() {
+        return colours;
+    }
+
+    @Override
+    public String toString() {
+
+        return name + " the " + (StringUtils.join(colours, ',') + " " + breed).toLowerCase();
     }
 
     public static DogBuilder called(String name) {
@@ -41,8 +52,10 @@ public class Dog {
             return this;
         }
 
-        public Dog andOfColour(String colour) {
-            return new Dog(name, breed, colour);
+        public Dog andOfColour(String... colour) {
+            //return new Dog(name, breed, ImmutableList.copyOf(colour));
+            return new Dog(name, breed, Arrays.asList(colour));
+
         }
     }
 }
