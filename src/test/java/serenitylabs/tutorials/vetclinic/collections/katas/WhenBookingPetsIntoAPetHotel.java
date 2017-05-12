@@ -65,7 +65,6 @@ public class WhenBookingPetsIntoAPetHotel {
 
         //Then
         assertThat(petHotel.getPets()).containsExactly(nemo);
-
     }
 
     @Test
