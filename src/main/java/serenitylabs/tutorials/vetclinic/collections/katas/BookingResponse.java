@@ -7,20 +7,20 @@ public class BookingResponse {
     private Pet pet;
     private int bookingNumber = 0;
 
-    public BookingResponse(Pet pet) {
+    BookingResponse(Pet pet) {
         this.pet = pet;
     }
 
-    public boolean isConfirmed() {
+    boolean isConfirmed() {
         return true;
     }
 
-    public Pet pet() {
+    Pet pet() {
         return  pet;
     }
 
 
-    public int bookingNumber() {
+    int bookingNumber() {
         return bookingNumber;
     }
 }
