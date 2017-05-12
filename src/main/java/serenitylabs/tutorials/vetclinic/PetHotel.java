@@ -1,5 +1,7 @@
 package serenitylabs.tutorials.vetclinic;
 
+import serenitylabs.tutorials.vetclinic.collections.katas.BookingResponse;
+
 import java.util.Collection;
 import java.util.Map;
 import java.util.TreeMap;
@@ -12,7 +14,8 @@ public class PetHotel {
         return pets.values();
     }
 
-    public void checkIn(Pet pet) {
+    public BookingResponse checkIn(Pet pet) {
         pets.put(pet.getName(), pet);
+        return new BookingResponse(pet);
     }
 }
