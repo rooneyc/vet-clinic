@@ -69,6 +69,19 @@ public class WhenBookingPetsIntoAPetHotel {
 
     @Test
     public void should_be_able_to_obtain_a_booking_confirmation_when_we_check_in_a_pet() throws Exception {
+
+        //Given
+        PetHotel petHotel = new PetHotel();
+        Pet nemo = new Pet("Nemo", Breed.Fish);
+
+        //When
+        BookingResponse response = petHotel.checkIn(nemo);
+
+        //Then
+        assertThat(response.pet()).is(nemo);
+        assertThat(response.bookingNumber()).isSameAs(0);
+        assertThat(response.isConfirmed()).isTrue();
+
     }
 
     @Test
