@@ -29,7 +29,7 @@ public class WhenBookingPetsIntoAPetHotel {
         Pet nemo = new Pet("Nemo", Breed.Fish);
 
         //When
-        petHotel.checkIn("Nemo");
+        petHotel.checkIn(nemo);
 
         //Then
         assertThat(petHotel.getPets()).contains(nemo);
