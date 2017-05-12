@@ -18,7 +18,6 @@ public class WhenBookingPetsIntoAPetHotel {
 
         //Then
         assertThat(petHotel.getPets()).isEmpty();
-
     }
 
     @Test
@@ -33,7 +32,6 @@ public class WhenBookingPetsIntoAPetHotel {
 
         //Then
         assertThat(petHotel.getPets()).contains(nemo);
-
     }
 
     @Test
@@ -52,7 +50,6 @@ public class WhenBookingPetsIntoAPetHotel {
 
         //Then
         assertThat(petHotel.getPets()).contains(nemo, fido, garfield);
-
     }
 
     @Test
