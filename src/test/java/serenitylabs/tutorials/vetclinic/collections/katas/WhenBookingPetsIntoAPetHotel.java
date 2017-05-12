@@ -54,6 +54,18 @@ public class WhenBookingPetsIntoAPetHotel {
 
     @Test
     public void should_not_be_able_to_check_in_the_same_pet_twice() throws Exception {
+
+        //Given
+        PetHotel petHotel = new PetHotel();
+        Pet nemo = new Pet("Nemo", Breed.Fish);
+
+        //When
+        petHotel.checkIn(nemo);
+        petHotel.checkIn(nemo);
+
+        //Then
+        assertThat(petHotel.getPets()).containsExactly(nemo);
+
     }
 
     @Test
