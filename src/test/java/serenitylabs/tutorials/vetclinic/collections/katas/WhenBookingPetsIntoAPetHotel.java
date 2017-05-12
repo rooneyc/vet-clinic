@@ -22,11 +22,11 @@ public class WhenBookingPetsIntoAPetHotel {
     }
 
     @Test
-    public void should_be_able_to_retrieve_checked_in_pets_in_alphabetical_order() throws Exception {
+    public void should_be_able_to_obtain_a_booking_confirmation_when_we_check_in_a_pet() throws Exception {
     }
 
     @Test
-    public void should_be_able_to_obtain_a_booking_confirmation_when_we_check_in_a_pet() throws Exception {
+    public void should_be_able_to_retrieve_checked_in_pets_in_alphabetical_order() throws Exception {
     }
 
     @Test
@@ -36,7 +36,6 @@ public class WhenBookingPetsIntoAPetHotel {
     @Test
     public void should_notify_owner_that_the_hotel_is_full() throws Exception {
     }
-
 
     @Test
     public void should_place_pets_on_a_waiting_list_when_the_hotel_is_full() throws Exception {
