@@ -78,7 +78,7 @@ public class WhenBookingPetsIntoAPetHotel {
         BookingResponse response = petHotel.checkIn(nemo);
 
         //Then
-        assertThat(response.pet()).is(nemo);
+        assertThat(response.pet()).isEqualTo(nemo);
         assertThat(response.bookingNumber()).isSameAs(0);
         assertThat(response.isConfirmed()).isTrue();
 
