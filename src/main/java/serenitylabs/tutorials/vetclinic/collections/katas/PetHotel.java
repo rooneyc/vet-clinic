@@ -1,5 +1,6 @@
-package serenitylabs.tutorials.vetclinic;
+package serenitylabs.tutorials.vetclinic.collections.katas;
 
+import serenitylabs.tutorials.vetclinic.Pet;
 import serenitylabs.tutorials.vetclinic.collections.katas.BookingResponse;
 
 import java.util.Collection;
