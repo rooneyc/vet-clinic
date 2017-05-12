@@ -9,4 +9,7 @@ public class PetHotel {
         return new ArrayList<>();
     }
 
+    public void checkIn(Pet pet) {
+
+    }
 }
