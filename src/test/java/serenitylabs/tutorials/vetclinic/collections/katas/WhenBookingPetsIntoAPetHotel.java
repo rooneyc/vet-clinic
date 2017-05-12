@@ -7,6 +7,13 @@ public class WhenBookingPetsIntoAPetHotel {
 
     @Test
     public void the_hotel_should_initially_have_no_pets_booked() {
+
+        //When
+        PetHotel petHotel = new PetHotel();
+
+        //Then
+        assertThat(petHotel.getPets()).isEmpty();
+
     }
 
     @Test
