@@ -1,6 +1,9 @@
 package serenitylabs.tutorials.vetclinic.collections.katas;
 
 import org.junit.Test;
+import serenitylabs.tutorials.vetclinic.PetHotel;
+
+import static org.assertj.core.api.Assertions.assertThat;
 
 public class WhenBookingPetsIntoAPetHotel {
 
