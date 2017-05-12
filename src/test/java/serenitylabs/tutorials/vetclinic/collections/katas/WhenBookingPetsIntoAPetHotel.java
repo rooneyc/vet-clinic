@@ -80,7 +80,6 @@ public class WhenBookingPetsIntoAPetHotel {
         assertThat(response.pet()).isEqualTo(nemo);
         assertThat(response.bookingNumber()).isSameAs(0);
         assertThat(response.isConfirmed()).isTrue();
-
     }
 
     @Test
