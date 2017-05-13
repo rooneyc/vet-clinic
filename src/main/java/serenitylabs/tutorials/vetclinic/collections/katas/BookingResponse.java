@@ -4,10 +4,13 @@ import serenitylabs.tutorials.vetclinic.Pet;
 
 class BookingResponse {
 
+    private Pet pet;
+
     BookingResponse(Pet pet) {
+        this.pet = pet;
     }
 
-    public Pet pet() {
-        return null;
+    Pet pet() {
+        return pet;
     }
 }
