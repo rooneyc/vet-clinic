@@ -22,7 +22,8 @@ class PetHotel {
     BookingResponse checkIn(Pet pet) {
         if (pets.size() != MAXIMUM_CAPACITY) {
             pets.add(pet);
+            return new BookingResponse(pet);
         }
-        return new BookingResponse(pet);
+        return new BookingAcknowledgement();
     }
 }
