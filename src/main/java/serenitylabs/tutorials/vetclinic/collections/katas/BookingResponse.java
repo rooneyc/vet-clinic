@@ -21,4 +21,8 @@ class BookingResponse {
     boolean isConfirmed() {
         return true;
     }
+
+    boolean isOnWaitingList() {
+        return true;
+    }
 }
