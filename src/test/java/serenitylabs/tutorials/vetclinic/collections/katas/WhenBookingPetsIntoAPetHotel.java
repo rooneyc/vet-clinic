@@ -162,6 +162,24 @@ public class WhenBookingPetsIntoAPetHotel {
 
     @Test
     public void pets_on_the_waiting_list_should_be_admitted_on_a_first_come_first_served_basis() throws Exception {
+
+        //Given
+        PetHotel hotel = APetHotel.with(PetHotel.MAXIMUM_CAPACITY - 1).petsCheckedIn();
+        Pet stripe = Pet.rabbit().named("Stripe");
+        Pet buddy = Pet.dog().named("Buddy");
+        Pet fluffy = Pet.cat().named("Fluffy");
+
+        hotel.checkIn(stripe);
+
+        //When
+        hotel.checkIn(buddy);
+        hotel.checkIn(fluffy);
+        //And
+        hotel.checkOut(stripe);
+
+        //Then
+        assertThat(hotel.getPets()).contains(buddy);
+        assertThat(hotel.getPets()).doesNotContain(fluffy);
     }
 
 }
