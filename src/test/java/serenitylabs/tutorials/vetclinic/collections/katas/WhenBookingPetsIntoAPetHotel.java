@@ -11,7 +11,7 @@ public class WhenBookingPetsIntoAPetHotel {
         PetHotel hotel = new PetHotel();
 
         //Then
-
+        assertThat(hotel.getPets())
 
     }
 
