@@ -66,6 +66,14 @@ public class WhenBookingPetsIntoAPetHotel {
 
     @Test
     public void should_be_able_to_obtain_a_booking_confirmation_when_we_check_in_a_pet() throws Exception {
+
+        //Given
+        PetHotel hotel = new PetHotel();
+        Pet stripe = Pet.rabbit().named("Stripe");
+
+        //When
+        BookingResponse booking = hotel.checkIn(stripe);
+
     }
 
     @Test
