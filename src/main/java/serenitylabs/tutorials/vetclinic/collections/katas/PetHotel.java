@@ -33,5 +33,6 @@ class PetHotel {
 
     void checkOut(Pet pet) {
         pets.remove(pet);
+        pets.add(waitingList.poll());
     }
 }
