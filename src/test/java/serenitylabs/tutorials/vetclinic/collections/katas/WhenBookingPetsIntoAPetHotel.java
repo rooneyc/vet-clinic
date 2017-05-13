@@ -143,6 +143,21 @@ public class WhenBookingPetsIntoAPetHotel {
 
     @Test
     public void pets_on_the_waiting_list_should_be_added_to_the_hotel_when_a_place_is_freed() throws Exception {
+
+        //Given
+        PetHotel hotel = APetHotel.with(PetHotel.MAXIMUM_CAPACITY - 1).petsCheckedIn();
+        Pet stripe = Pet.rabbit().named("Stripe");
+        Pet buddy = Pet.dog().named("Buddy");
+
+        hotel.checkIn(stripe);
+
+        //When
+        hotel.checkIn(buddy);
+        //And
+        hotel.checkOut(stripe);
+
+        //Then
+        assertThat(hotel.getPets()).contains(buddy);
     }
 
     @Test
