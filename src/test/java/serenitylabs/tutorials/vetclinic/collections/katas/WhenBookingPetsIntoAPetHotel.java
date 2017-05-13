@@ -76,7 +76,7 @@ public class WhenBookingPetsIntoAPetHotel {
 
         //Then
         assertThat(booking.pet()).isSameAs(stripe);
-        assertThat(booking.bookingNumber())
+        assertThat(booking.bookingNumber()).isEqualTo(0);
 
     }
 
