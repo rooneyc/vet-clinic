@@ -6,4 +6,8 @@ class BookingResponse {
 
     BookingResponse(Pet pet) {
     }
+
+    public Pet pet() {
+        return null;
+    }
 }
