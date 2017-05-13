@@ -17,4 +17,8 @@ class BookingResponse {
     int bookingNumber() {
         return 0;
     }
+
+    boolean isConfirmed() {
+        return true;
+    }
 }
