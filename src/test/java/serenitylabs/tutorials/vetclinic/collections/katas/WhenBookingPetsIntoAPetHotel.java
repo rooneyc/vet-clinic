@@ -78,11 +78,24 @@ public class WhenBookingPetsIntoAPetHotel {
         assertThat(booking.pet()).isSameAs(stripe);
         assertThat(booking.bookingNumber()).isEqualTo(0);
         assertThat(booking.isConfirmed()).isTrue();
-
     }
 
     @Test
     public void should_be_able_to_retrieve_checked_in_pets_in_alphabetical_order() throws Exception {
+
+        //Given
+        PetHotel hotel = new PetHotel();
+        Pet stripe = Pet.rabbit().named("Stripe");
+        Pet buddy = Pet.dog().named("Buddy");
+        Pet fluffy = Pet.cat().named("Fluffy");
+
+        //When
+        hotel.checkIn(stripe);
+        hotel.checkIn(buddy);
+        hotel.checkIn(fluffy);
+
+        //Then
+        assertThat(hotel.getPets()).containsSequence(buddy, fluffy, stripe);
     }
 
     @Test
