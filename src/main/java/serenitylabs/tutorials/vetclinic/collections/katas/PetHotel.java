@@ -3,11 +3,16 @@ package serenitylabs.tutorials.vetclinic.collections.katas;
 import serenitylabs.tutorials.vetclinic.Pet;
 
 import java.util.Collection;
-import java.util.Collections;
 
 class PetHotel {
 
+    private Collection<Pet> pets;
+
     Collection<Pet> getPets() {
-        return Collections.EMPTY_LIST;
+        return pets;
+    }
+
+    void checkIn(Pet pet) {
+        pets.add(pet);
     }
 }
