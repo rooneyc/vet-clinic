@@ -14,7 +14,8 @@ class PetHotel {
         return pets.values();
     }
 
-    void checkIn(Pet pet) {
+    BookingResponse checkIn(Pet pet) {
         pets.put(pet.getName(), pet);
+        return new BookingResponse(pet);
     }
 }
