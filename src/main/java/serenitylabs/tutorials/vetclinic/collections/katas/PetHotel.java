@@ -27,7 +27,11 @@ class PetHotel {
         return new BookingAcknowledgement(pet);
     }
 
-    public Queue<Pet> getWaitingList() {
+    Queue<Pet> getWaitingList() {
         return waitingList;
+    }
+
+    void checkOut(Pet pet) {
+        pets.remove(pet);
     }
 }
