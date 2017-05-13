@@ -103,7 +103,13 @@ public class WhenBookingPetsIntoAPetHotel {
 
         //Given
         PetHotel hotel = APetHotel.with(PetHotel.MAXIMUM_CAPACITY).petsCheckedIn();
+        Pet stripe = Pet.rabbit().named("Stripe");
 
+        //When
+        hotel.checkIn(stripe);
+
+        //Then
+        assertThat(hotel.getPets()).doesNotContain(stripe);
     }
 
     @Test
