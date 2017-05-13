@@ -2,6 +2,8 @@ package serenitylabs.tutorials.vetclinic.collections.katas;
 
 import org.junit.Test;
 
+import static org.assertj.core.api.Assertions.assertThat;
+
 public class WhenBookingPetsIntoAPetHotel {
 
     @Test
@@ -11,8 +13,7 @@ public class WhenBookingPetsIntoAPetHotel {
         PetHotel hotel = new PetHotel();
 
         //Then
-        assertThat(hotel.getPets())
-
+        assertThat(hotel.getPets()).isEmpty();
     }
 
     @Test
