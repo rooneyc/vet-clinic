@@ -129,6 +129,16 @@ public class WhenBookingPetsIntoAPetHotel {
 
     @Test
     public void should_place_pets_on_a_waiting_list_when_the_hotel_is_full() throws Exception {
+
+        //Given
+        PetHotel hotel = APetHotel.with(PetHotel.MAXIMUM_CAPACITY).petsCheckedIn();
+        Pet stripe = Pet.rabbit().named("Stripe");
+
+        //When
+        hotel.checkIn(stripe);
+
+        //Then
+        assertThat(hotel.getWaitingList()).contains(stripe);
     }
 
     @Test
