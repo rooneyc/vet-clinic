@@ -124,6 +124,7 @@ public class WhenBookingPetsIntoAPetHotel {
 
         //Then
         assertThat(booking.isConfirmed()).isFalse();
+        assertThat(booking.isOnWaitingList())
     }
 
     @Test
