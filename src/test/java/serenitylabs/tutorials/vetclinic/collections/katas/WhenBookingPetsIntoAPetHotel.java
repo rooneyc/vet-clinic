@@ -114,6 +114,16 @@ public class WhenBookingPetsIntoAPetHotel {
 
     @Test
     public void should_notify_owner_that_the_hotel_is_full() throws Exception {
+
+        //Given
+        PetHotel hotel = APetHotel.with(PetHotel.MAXIMUM_CAPACITY).petsCheckedIn();
+        Pet stripe = Pet.rabbit().named("Stripe");
+
+        //When
+        BookingResponse booking = hotel.checkIn(stripe);
+
+        //Then
+        assertThat(booking.isConfirmed()).isFalse();
     }
 
     @Test
