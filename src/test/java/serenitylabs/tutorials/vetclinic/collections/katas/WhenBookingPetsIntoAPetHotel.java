@@ -74,7 +74,8 @@ public class WhenBookingPetsIntoAPetHotel {
         //When
         BookingResponse booking = hotel.checkIn(stripe);
 
-
+        //Then
+        assertThat(booking.pet())
 
     }
 
