@@ -8,10 +8,12 @@ class BookingAcknowledgement extends BookingResponse {
         super(pet);
     }
 
+    @Override
     boolean isConfirmed() {
         return false;
     }
 
+    @Override
     boolean isOnWaitingList() {
         return true;
     }
