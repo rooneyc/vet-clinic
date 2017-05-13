@@ -74,6 +74,8 @@ public class WhenBookingPetsIntoAPetHotel {
         //When
         BookingResponse booking = hotel.checkIn(stripe);
 
+
+
     }
 
     @Test
