@@ -13,4 +13,8 @@ class BookingResponse {
     Pet pet() {
         return pet;
     }
+
+    int bookingNumber() {
+        return 0;
+    }
 }
