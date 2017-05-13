@@ -102,7 +102,7 @@ public class WhenBookingPetsIntoAPetHotel {
     public void should_not_be_able_to_check_in_pets_beyond_hotel_capacity() throws Exception {
 
         //Given
-        PetHotel hotel = APetHotel.with(PetHotel.MAXIMUM_CAPACITY)
+        PetHotel hotel = APetHotel.with(PetHotel.MAXIMUM_CAPACITY).petsCheckedIn();
 
     }
 
