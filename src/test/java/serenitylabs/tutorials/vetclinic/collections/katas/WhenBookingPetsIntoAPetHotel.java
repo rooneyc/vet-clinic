@@ -100,6 +100,10 @@ public class WhenBookingPetsIntoAPetHotel {
 
     @Test
     public void should_not_be_able_to_check_in_pets_beyond_hotel_capacity() throws Exception {
+
+        //Given
+        PetHotel hotel = APetHotel.with(PetHotel.MAXIMUM)
+
     }
 
     @Test
